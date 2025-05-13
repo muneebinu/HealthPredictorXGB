@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Disease Predictor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .developers {
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f9fafc;
+            border-radius: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #34495e;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .checkbox-group label:hover {
+            background: #e8f0fe;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #6e8efb;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(90deg, #6e8efb, #a777e3);
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #a777e3, #6e8efb);
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f1f3f5;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #2c3e50;
+            transition: transform 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.02);
+        }
+
+        /* Scrollbar Styling */
+        .checkbox-group::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .checkbox-group::-webkit-scrollbar-thumb {
+            background: #a777e3;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Disease Prediction</h1>
+        <p class="developers">Developed by Taimur Khan & Arif Khan</p>
+    </div>
+    <div class="container">
+        <form method="post">
+            <div class="checkbox-group" id="checkboxGroup">
+                {% for feature in features %}
+                    <label>
+                        <input type="checkbox" name="symptoms" value="{{ feature }}">
+                        {{ feature }}
+                    </label>
+                {% endfor %}
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if top_diseases %}
+            <div class="results">
+                <h2>Top Predictions:</h2>
+                <ul>
+                    {% for disease, prob in top_diseases %}
+                        <li>{{ disease }} - {{ prob }}%</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Add interactivity to checkboxes
+        const checkboxGroup = document.getElementById('checkboxGroup');
+        const checkboxes = checkboxGroup.querySelectorAll('input[type="checkbox"]');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const label = this.parentElement;
+                if (this.checked) {
+                    label.style.background = '#e8f0fe';
+                    label.style.fontWeight = 'bold';
+                } else {
+                    label.style.background = 'none';
+                    label.style.fontWeight = 'normal';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
