@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 Here are some screenshots of the HealthPredictorXGB app:
 
-### Screenshot Of Gui
-![Screenshot 1]("C:\Users\DELL\Desktop\pics\disese.png")
+### Screenshot Of GUI
+![Screenshot 1](disease.png)
 
 
