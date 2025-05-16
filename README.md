@@ -1,5 +1,5 @@
 # HealthPredictorXGB
-![App GUI](disease.png)
+(disease.png)
 
 ## 🩺 Disease Prediction Using Symptoms
 
