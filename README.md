@@ -1,5 +1,9 @@
 # HealthPredictorXGB
-(disease.png)
+
+## Disease Prediction Using Symptoms
+
+![GUI Screenshot](./disease.png)
+
 
 ## 🩺 Disease Prediction Using Symptoms
 
