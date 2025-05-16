@@ -5,6 +5,7 @@
 ![GUI Screenshot](./disease.png)
 
 
+
 ## 🩺 Disease Prediction Using Symptoms
 
 **HealthPredictorXGB** is a machine learning-based web application that predicts potential diseases based on user-provided symptoms. It uses the **XGBoost** algorithm, known for its robustness and accuracy in classification tasks.
