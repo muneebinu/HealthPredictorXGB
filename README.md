@@ -1,32 +1,32 @@
 # HealthPredictorXGB
+![App GUI](disease.png)
 
-## Disease Prediction Using Symptoms
+## 🩺 Disease Prediction Using Symptoms
 
-This project uses machine learning to predict diseases based on symptoms using the **XGBoost** algorithm. The model is trained using a dataset of common symptoms and their corresponding diseases.
+**HealthPredictorXGB** is a machine learning-based web application that predicts potential diseases based on user-provided symptoms. It uses the **XGBoost** algorithm, known for its robustness and accuracy in classification tasks.
 
-### Features:
-- Predict diseases based on a given set of symptoms.
-- Model trained using **XGBoost** to achieve high accuracy.
-- Includes pre-processed datasets for both training and testing.
+---
 
-### Requirements:
-To run the code, you will need to have the following libraries installed:
+### 🚀 Features
+
+- Predicts diseases based on input symptoms.
+- Trained using the XGBoost algorithm for high accuracy.
+- Includes pre-processed datasets for training and testing.
+- Optional Flask web application for a simple user interface.
+
+---
+
+### 📦 Requirements
+
+To run the code, ensure the following Python libraries are installed:
 
 - `pandas`
 - `numpy`
 - `xgboost`
-- `sklearn`
-- `flask` (if using the app)
+- `scikit-learn`
+- `flask` (only if using the web app)
 
-You can install the dependencies using `pip`:
+Install all dependencies using:
 
 ```bash
 pip install -r requirements.txt
-## App Screenshots
-
-Here are some screenshots of the HealthPredictorXGB app:
-
-### Screenshot Of GUI
-![Screenshot 1](disease.png)
-
-
