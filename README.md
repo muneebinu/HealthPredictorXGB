@@ -1,4 +1,9 @@
 # HealthPredictorXGB
+## 🤝 Contributing
+
+We welcome contributions to improve HealthPredictorXGB!  
+Please check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide to get started.
+
 
 ## Disease Prediction Using Symptoms
 
